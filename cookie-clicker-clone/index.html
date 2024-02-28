@@ -21,6 +21,9 @@
         <p id="cookiepersec" title="Clicks per Second">Clicks per second</p>
       </div>
     </div>
+    <div class="item-info-container">
+      <button id="iteminfobtn" onclick="itemBtnFn()">Items</button>
+    </div>
     <div class="shop-container">
       <button id="shop" onclick="shopBtnFn()">Shop</button>
     </div>
@@ -29,7 +32,7 @@
 <!--------------------Game section----------------------------------------->
 <section>
   <div class="main-game">
-    <img src="images/assets/main-cookie.png" alt="Cookie image" id="main-cookie" onclick="mainCookieClick()">
+    <img src="images/assets/main-cookie.png" alt="Cookie image" id="main-cookie" onclick="mainCookieClick()" class="">
     <div class="shophide" id="shopscreen">
       <h1>Shop</h1>
       <p id="shopinfotext">Buy upgrades and stuff here</p>
@@ -37,6 +40,14 @@
         <button onclick="autoClickShop()" title="Adds +1 for every click">$100: Upgrade Click</button>
       </div>
       <button id="closeshop" onclick="closeShopFn()">Close Shop</button>
+    </div>
+    <div class="itemhide" id="itemscreen">
+      <h1>Items</h1>
+      <p>View your items here</p>
+      <div class="item-screen-col-1">
+        <h4><img src="images/icons/clicker-upgrade-item.svg" alt="clicker upgrade icon"> Clicker Upgrades: <span id="autoclickinfo"></span></h4>
+      </div>
+      <button id="closeitem" onclick="closeItemFn()">Close</button>
     </div>
   </div>
 </section>
