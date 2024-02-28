@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic cookie clicker clone</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="./images/icons/favicon.ico" type="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+<hero>
+  <section>
+    <div class="hero">
+      <div class="title-text">
+        <h1>Cookie clicker <span>JS</span></h1>
+      </div>
+      <div class="cookie-count">
+        <h2 id="cookiecounttext">Click to start</h2>
+        <p id="cookiepersec" title="Clicks per Second">Clicks per second</p>
+      </div>
+    </div>
+    <div class="shop-container">
+      <button id="shop" onclick="shopBtnFn()">Shop</button>
+    </div>
+  </section>
+</hero>
+<!--------------------Game section----------------------------------------->
+<section>
+  <div class="main-game">
+    <img src="images/assets/main-cookie.png" alt="Cookie image" id="main-cookie" onclick="mainCookieClick()">
+    <div class="shophide" id="shopscreen">
+      <h1>Shop</h1>
+      <p id="shopinfotext">Buy upgrades and stuff here</p>
+      <div class="shop-screen-btn">
+        <button onclick="autoClickShop()" title="Adds +1 for every click">$100: Upgrade Click</button>
+      </div>
+      <button id="closeshop" onclick="closeShopFn()">Close Shop</button>
+    </div>
+  </div>
+</section>
+<!---------------Footersection----------------------------------------->
+<section>
+  <footer>
+    <div class="footer-container">
+      <h2>Cookie Clicker JS</h2>
+      <p>Feel free to modify this ig</p>
+      <a href="https://github.com/AtomicExpresso">My github page</a>
+    </div>
+  </footer>
+</section>
+<!--------Background animation----------------------------------------->
+<div class="background-animation">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+    <img src="images/effects/cookie1.png" id="bgani">
+</div>
+</body>
+<script src="app.js"></script>
+</html>

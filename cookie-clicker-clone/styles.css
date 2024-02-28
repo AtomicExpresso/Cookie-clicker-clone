@@ -1,0 +1,301 @@
+/*============Initial setup===========================*/
+/**Page Layout:
+1. Shop Screen
+2. Game Screen
+3. Footer
+4. Background Animation
+5. Animations
+**/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: 'Poppins', 'sans-sherif';
+}
+
+body {
+  background-image: url(./images/background/main.jpg);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.hero h1{
+  font-size: 20px;
+}
+
+.hero h2{
+  text-shadow: 1px 1px 2px black;
+  font-size: 40px;
+}
+
+.title-text{
+  margin-top: 1vh;
+  background-color: hsla(0, 0%, 0%, 0.516);
+  line-height: 0px;
+  padding: 1vh 10vw;
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+
+.title-text span{
+  color: rgb(255, 225, 0);
+}
+
+.cookie-count { /*Displays current cookie amount*/
+  display:flex;
+  flex-direction: column;
+  line-height: 0px;
+  align-items: center;
+  background-color: hsla(0, 0%, 0%, 0.516);
+  width: 100%;
+  text-shadow: 1px 1px 2px black;
+}
+/*============1. Shop screen===========================*/
+.shop-container button{
+  background-color: rgb(0, 157, 255);
+  position: fixed;
+  bottom: 10px;
+  text-shadow: 1px 1px 2px black;
+  cursor: pointer;
+  color: white;
+  border: solid 2px hsla(0, 0%, 100%, 0.667);
+  border-radius: 15px;
+  padding: 1vh 3vw;
+  transition: 0.3s;
+}
+
+.shop-container button:hover{
+  scale: 1.1;
+  background-color: rgb(1, 133, 215);
+}
+
+.shophide{
+  display: none;
+}
+
+.shop-screen{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: hsla(208, 100%, 97%, 0.664);
+  border-radius: 10px;
+  position: absolute;
+  z-index: 500;
+  width: 100vw;
+  height: 50vh;
+  border: solid 5px hsla(0, 0%, 0%, 0.258);
+  line-height: 5px;
+}
+
+.shop-screen h1{
+  color: hsla(121, 100%, 63%, 0.849);
+  font-size: 40px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.shop-screen-btn button{
+  background-color: rgb(0, 157, 255);
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  border: solid 2px hsla(0, 0%, 100%, 0.667);
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.shop-screen-btn button:hover{
+  background-color: rgb(0, 89, 255);
+}
+
+#closeshop {
+  background-color: rgba(255, 0, 0, 0.587);
+  text-shadow: 1px 1px 2px black;
+  color: white;
+  padding: 10px;
+  width: 30%;
+  border-radius: 10px;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#closeshop:hover {
+  background-color: rgba(143, 1, 1, 0.79);
+  scale: 0.98;
+}
+
+/*============2. Main game screen===========================*/
+
+.main-game{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scale: 0.8;
+  cursor: default;
+  transition: 0.4s;
+}
+
+.main-game img{
+  filter: drop-shadow(10px 10px 10px hsla(0, 0%, 0%, 0.475));
+  z-index: 20;
+  cursor: pointer;
+}
+
+.main-game img:hover{
+  animation: cookieBounce 0.5s ease;
+  transition: 0.4s;
+}
+
+.main-game img:active{
+  scale: 0.8;
+  transition: 0.4s;
+}
+
+/*============3. Footer===========================*/
+
+.footer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsla(0, 0%, 0%, 0.637);
+  color: white;
+  z-index: 1;
+  padding-bottom: 2vh;
+  text-shadow: 1px 1px 2px black;
+}
+
+.footer-container a{
+  text-decoration: none;
+  color: rgb(0, 200, 255);
+}
+
+/*============4. BackGround animation===========================*/
+
+.background-animation {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: -1;
+  cursor: default;
+}
+
+.background-animation img {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  scale: 0.5;
+  animation: animate 19s linear infinite;
+}
+
+.background-animation li:nth-child(0) {
+  left: 71%;
+  width: 165px;
+  height: 165px;
+  bottom: -165px;
+  animation-delay: 1s;
+}
+.background-animation img:nth-child(1) {
+  left: 62%;
+  width: 156px;
+  height: 156px;
+  bottom: -156px;
+  animation-delay: 2s;
+}
+.background-animation img:nth-child(2) {
+  left: 75%;
+  width: 199px;
+  height: 199px;
+  bottom: -199px;
+  animation-delay: 1s;
+}
+.background-animation img:nth-child(3) {
+  left: 73%;
+  width: 166px;
+  height: 166px;
+  bottom: -166px;
+  animation-delay: 1s;
+}
+.background-animation img:nth-child(4) {
+  left: 88%;
+  width: 187px;
+  height: 187px;
+  bottom: -187px;
+  animation-delay: 14s;
+}
+.background-animation img:nth-child(5) {
+  left: 35%;
+  width: 152px;
+  height: 152px;
+  bottom: -152px;
+  animation-delay: 22s;
+}
+.background-animation img:nth-child(6) {
+  left: 1%;
+  width: 159px;
+  height: 159px;
+  bottom: -159px;
+  animation-delay: 2s;
+}
+.background-animation img:nth-child(7) {
+  left: 31%;
+  width: 123px;
+  height: 123px;
+  bottom: -123px;
+  animation-delay: 4s;
+}
+.background-animation img:nth-child(8) {
+  left: 33%;
+  width: 187px;
+  height: 187px;
+  bottom: -187px;
+  animation-delay: 20s;
+}
+.background-animation img:nth-child(9) {
+  left: 33%;
+  width: 175px;
+  height: 175px;
+  bottom: -175px;
+  animation-delay: 7s;
+}
+
+/*============5. Animation===========================*/
+@keyframes cookieBounce{
+  25%{
+    scale: 1.05;
+  }
+  50%{
+    scale: 1;
+  }
+  75%{
+    scale: 1.05;
+  }
+  100%{
+    scale: 1;
+  }
+}
+  @keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
