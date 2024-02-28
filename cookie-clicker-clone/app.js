@@ -11,6 +11,11 @@ const shopBtn = document.getElementById('shop'); // Button for the shop
 const closeShopBtn = document.getElementById('closeshop'); //button for closing the shop screen
 const shopScreen = document.getElementById('shopscreen'); //shop screen
 
+//Assign variables for the item screen
+const itemAutoClickInfo = document.getElementById('autoclickinfo');
+const itemScreen = document.getElementById('itemscreen'); //item screen
+const closeItemBtn = document.getElementById('closeitem'); //button for closing the shop screen
+
 //Cookie Variables
 let cookieClick = 0; //Cookie clicks are used as 'Currency'
 let cookiePerSec = 0; //Tracks how many clicks per second you get
@@ -18,6 +23,11 @@ let cookiePerSec = 0; //Tracks how many clicks per second you get
 //Shop Variables
 let autoClick = 0;
 let shopBtnClick = 0;
+
+//Inventory Screen variables
+let itemBtnClick = 0;
+
+//Settings
 
 //==============Logic===========================
 
@@ -43,18 +53,13 @@ document.getElementById('bgani').ondragstart = function () {
   return false;
 };
 
-//Set cookie clicks per second
-setInterval(function cookiesec() {
-  cookiePerSecText.innerText = `Clicks ps: ${cookiePerSec}`;
-  cookiePerSec = 0;
-}, 1000);
-
 //Shop
 const autoClickShop = () => {
   if (cookieClick >= 100) {
+    //tests if you have enough to buy the item
     cookieClick -= 100;
     autoClick += 1;
-    cookieCountText.innerText = `${cookieClick} Cookies`;
+    cookieCountText.innerText = `${cookieClick} Cookies`; //changes your balence
 
     shopinfotext.innerText =
       'You bought a click upgrade! Your clicks are increased by +1';
@@ -68,6 +73,7 @@ const autoClickShop = () => {
 const shopBtnFn = () => {
   shopScreen.classList.add('shop-screen');
   shopinfotext.style.color = 'black';
+  shopinfotext.innerText = 'Buy upgrades and stuff here'
   shopBtnClick++;
 
   if (shopBtnClick >= 2) {
@@ -79,5 +85,40 @@ const shopBtnFn = () => {
 const closeShopFn = () => {
   shopScreen.classList.remove('shop-screen');
 };
+
+//Item screen
+const itemBtnFn = () => {
+  itemScreen.classList.add('item-screen');
+  itemAutoClickInfo.style.color = 'green'; //changes the click upgrade number to green
+  itemAutoClickInfo.innerText = `${autoClick}`; //displays how many click upgrades you bought
+
+  itemBtnClick++;
+
+  if (itemBtnClick >= 2) {
+    itemBtnClick = 0;
+    itemScreen.classList.remove('item-screen');
+  }
+};
+
+const closeItemFn = () => {
+  itemScreen.classList.remove('item-screen');
+};
+//==========================
+//Click's Per second effects
+//==========================
+//Set cookie clicks per second
+setInterval(function cookiesec() {
+  cookiePerSecText.innerText = `Clicks ps: ${cookiePerSec}`;
+  cookiePerSec = 0;
+}, 1500);
+
+mainCookie.addEventListener('click', function () {
+  //Plays the RGB animation if the player's clicks per second goes over 8
+  if (cookiePerSec > 8) {
+    mainCookie.classList.add('click-effect');
+  } else {
+    mainCookie.classList.remove('click-effect');
+  }
+});
 
 //==============End of Logic===========================
