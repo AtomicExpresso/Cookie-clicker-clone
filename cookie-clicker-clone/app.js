@@ -52,7 +52,7 @@ setInterval(function cookiesec() {
 //Shop
 const autoClickShop = () => {
   if (cookieClick >= 100) {
-    cookieClick -= 10;
+    cookieClick -= 100;
     autoClick += 1;
     cookieCountText.innerText = `${cookieClick} Cookies`;
 
