@@ -1,10 +1,11 @@
 /*============Initial setup===========================*/
 /**Page Layout:
 1. Shop Screen
-2. Game Screen
-3. Footer
-4. Background Animation
-5. Animations
+2. Item info Screen
+3. Game Screen
+4. Footer
+5. Background Animation
+6. Animations
 **/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -133,7 +134,84 @@ body {
   scale: 0.98;
 }
 
-/*============2. Main game screen===========================*/
+.item-info-container button{
+  background-color: rgb(255, 0, 0);
+  position: fixed;
+  bottom: 10vh;
+  left: 1vw;
+  text-shadow: 1px 1px 2px black;
+  cursor: pointer;
+  color: white;
+  border: solid 2px hsla(0, 0%, 100%, 0.667);
+  border-radius: 15px;
+  padding: 1vh 3vw;
+  transition: 0.3s;
+}
+
+/*============2. Item info screen===========================*/
+
+.itemhide{
+  display: none;
+}
+
+.item-screen{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, 0.664);
+  border-radius: 10px;
+  position: absolute;
+  z-index: 500;
+  width: 100vw;
+  height: 50vh;
+  border: solid 5px hsla(0, 0%, 0%, 0.258);
+  line-height: 5px;
+}
+
+.item-screen h1{
+  color: hsla(217, 100%, 64%, 0.849);
+  font-size: 40px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.item-screen-col-1{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 1vw;
+}
+
+.item-info-container button:hover{
+  scale: 1.1;
+  background-color: rgb(191, 0, 0);
+}
+
+.iteminfohide{
+  display: none;
+}
+
+#closeitem {
+  background-color: rgba(255, 0, 0, 0.587);
+  text-shadow: 1px 1px 2px black;
+  color: white;
+  padding: 10px;
+  width: 30%;
+  border-radius: 10px;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#closeitem:hover {
+  background-color: rgba(143, 1, 1, 0.79);
+  scale: 0.98;
+}
+
+.item-screen-col-1 img{ /*Clicker upgrade SVG icon*/
+  margin-bottom: 1vh;
+}
+
+/*============3. Main game screen===========================*/
 
 .main-game{
   display: flex;
@@ -160,7 +238,13 @@ body {
   transition: 0.4s;
 }
 
-/*============3. Footer===========================*/
+.click-effect,
+.click-effect:hover,
+.click-effect:active{
+  animation: cookieClickEffectOne 1s ease !important;
+}
+
+/*============4. Footer===========================*/
 
 .footer-container{
   display: flex;
@@ -178,7 +262,7 @@ body {
   color: rgb(0, 200, 255);
 }
 
-/*============4. BackGround animation===========================*/
+/*============5. BackGround animation===========================*/
 
 .background-animation {
   position: fixed;
@@ -273,7 +357,7 @@ body {
   animation-delay: 7s;
 }
 
-/*============5. Animation===========================*/
+/*============6. Animation===========================*/
 @keyframes cookieBounce{
   25%{
     scale: 1.05;
@@ -299,4 +383,27 @@ body {
         opacity: 0;
         border-radius: 50%;
     }
+}
+
+@keyframes cookieClickEffectOne{
+  0%{
+    filter: drop-shadow(0 0 1rem hsla(0, 100%, 50%, 0.475));
+    scale: 1.05;
+  }
+  25%{
+    filter: drop-shadow(0 0 1rem hsla(41, 100%, 50%, 0.475));
+    scale: 1;
+  }
+  50%{
+      filter: drop-shadow(0 0 1rem hsla(106, 100%, 50%, 0.475));
+      scale: 1.05;
+    }
+  75%{
+    filter: drop-shadow(0 0 1rem hsla(221, 100%, 50%, 0.475));
+    scale: 1;
+  }
+  100%{
+    filter: drop-shadow(0 0 1rem hsla(287, 100%, 50%, 0.475));
+    scale: 1.05;
+  }
 }
