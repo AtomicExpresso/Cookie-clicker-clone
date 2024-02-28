@@ -7,7 +7,7 @@ This isnt the most efficent way to do things, but i just wanted to see if i coul
 </div>
 
 <style>
-img{
+body img {
 border-radius: 10px;
 }
 </style>
