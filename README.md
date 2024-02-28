@@ -1,3 +1,5 @@
 # Cookie-clicker-clone
 A simple cookie clicker clone, i made using html, bootstrap CSS and vanilla JavaScript.
-<img width="928" alt="image" src="https://github.com/AtomicExpresso/Cookie-clicker-clone/assets/156177896/a3b27ba2-d0c5-40a5-8191-d65bdd399f44">
+This isnt the most efficent way to do things, but i just wanted to see if i could do it using these languages.
+
+<img width="935" alt="image" src="https://github.com/AtomicExpresso/Cookie-clicker-clone/assets/156177896/10c2e866-f5bf-4c0b-bbd3-f0dbbd6e7d2d">
