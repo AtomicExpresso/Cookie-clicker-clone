@@ -14,7 +14,11 @@ const shopScreen = document.getElementById('shopscreen'); //shop screen
 //Assign variables for the item screen
 const itemAutoClickInfo = document.getElementById('autoclickinfo');
 const itemScreen = document.getElementById('itemscreen'); //item screen
-const closeItemBtn = document.getElementById('closeitem'); //button for closing the shop screen
+const closeItemBtn = document.getElementById('closeitem'); //button for closing the info screen
+
+//Assign Variables for the mile stone screen
+const milestoneScreen = document.getElementById('milestonescreen'); //item screen
+const closeMilestoneBtn = document.getElementById('closemilestones'); //button for closing the milestone screen
 
 //Cookie Variables
 let cookieClick = 0; //Cookie clicks are used as 'Currency'
@@ -25,6 +29,7 @@ let autoClick = 0;
 
 //Screen variables (Used to prevent overlapping and allow screens to be opened/closed)
 let itemBtnClick = 0;
+let milestoneBtnClick = 0;
 let shopBtnClick = 0;
 
 //Shop class instances (For each shop class instance, sets the items defualt value to undefined until declared)
@@ -127,11 +132,42 @@ const shopBtnFn = () => {
     itemBtnClick = 0;
     itemScreen.classList.remove('item-screen');
   }
+  if (milestoneBtnClick >= 1) { //prevents the screens from overlapping
+    milestoneBtnClick = 0;
+    milestoneScreen.classList.remove('milestone-screen');
+  }
 };
 
 const closeShopFn = () => {
   shopScreen.classList.remove('shop-screen');
 };
+//===========Milestone logic===============
+
+//Milestone screen
+const milestoneBtnFn = () => {
+  milestoneScreen.classList.add('milestone-screen');
+
+  milestoneBtnClick++;
+
+  if (milestoneBtnClick >= 2) {
+    milestoneBtnClick = 0;
+    milestoneScreen.classList.remove('milestone-screen');
+  }
+
+  if (shopBtnClick >= 1) { //prevents the screens from overlapping
+    shopBtnClick = 0;
+    shopScreen.classList.remove('shop-screen');
+  }
+  if(itemBtnClick >= 1){
+    itemBtnClick = 0;
+    itemScreen.classList.remove('item-screen');
+  }
+};
+
+const closeMilestonesFn = () => {
+  milestoneScreen.classList.remove('milestone-screen');
+};
+
 
 //===========Items logic===============
 
@@ -151,6 +187,10 @@ const itemBtnFn = () => {
   if (shopBtnClick >= 1) { //prevents the screens from overlapping
     shopBtnClick = 0;
     shopScreen.classList.remove('shop-screen');
+  }
+  if (milestoneBtnClick >= 1) { //prevents the screens from overlapping
+    milestoneBtnClick = 0;
+    milestoneScreen.classList.remove('milestone-screen');
   }
 };
 
