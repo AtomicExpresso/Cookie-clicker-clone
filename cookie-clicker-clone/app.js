@@ -99,7 +99,7 @@ let evaluatePrice = (shopInstance) => {
 
 //Auto Click Item, creates a new instance of a shop item (in this case, it creates an instance named autoClickItem)
 const autoClickShop = () => {
-  autoClickItem = new shop('Click Upgrade', 10);
+  autoClickItem = new shop('Click Upgrade', 100);
 
   // Evaluate the price and deduct from cookie count only if the player can afford it
   if (cookieClick >= autoClickItem.price) {
